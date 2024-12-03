@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  vue-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.production # Sử dụng Dockerfile cho production
+    image: vue-app:latest
+    container_name: vue-app
+    ports:
+      - "80:80"  # Mở cổng 80 để truy cập ứng dụng Vue.js
+    restart: always  # Đảm bảo container tự động restart nếu gặp lỗi
+    volumes:
+      - ./dist:/usr/share/nginx/html # Mount thư mục build (dist) vào Nginx container
+    networks:
+      - vue-network
+
+networks:
+  vue-network:
+    driver: bridge
