@@ -4,6 +4,9 @@ FROM node:16 AS build-stage
 # Đặt thư mục làm việc trong container
 WORKDIR /app
 
+# Cài đặt Vue CLI toàn cục
+RUN npm install -g @vue/cli
+
 # Copy package.json và package-lock.json vào container
 COPY package*.json ./
 
