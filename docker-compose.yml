@@ -8,7 +8,7 @@ services:
     image: vue-app:latest
     container_name: vue-app
     ports:
-      - "80:80"  # Mở cổng 80 để truy cập ứng dụng Vue.js
+      - "8080:80"
     restart: always  # Đảm bảo container tự động restart nếu gặp lỗi
     volumes:
       - ./dist:/usr/share/nginx/html # Mount thư mục build (dist) vào Nginx container
