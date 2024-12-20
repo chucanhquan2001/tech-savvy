@@ -18,5 +18,10 @@ export default {
 <style scoped>
 h1 {
   margin: 40px 0 0;
+  text-align: center;
+  margin-bottom: 50px;
+}
+img {
+  max-width: 100%;
 }
 </style>
